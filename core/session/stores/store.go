@@ -1,7 +1,7 @@
 package stores
 
 import (
-	"github.com/18211167516/sessions"
+	"github.com/gorilla/sessions"
 )
 
 type Store interface {

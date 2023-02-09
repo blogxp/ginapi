@@ -19,8 +19,6 @@ github.com/18211167516/hotstart v1.7.0 h1:7AW+ICe2Csb5OVp9/tVkDZbHw1Yxccq4NCsRb3
 github.com/18211167516/hotstart v1.7.0/go.mod h1:2BHjjagxna4XLlSgDwSjRssBqyeq7NRsbhBcvvVe/bY=
 github.com/18211167516/robfig-cron/v3 v3.0.4 h1:Sz9zW77arlz34O2EJC3owpaSHxQNHnFJ5RYjkR3tKMI=
 github.com/18211167516/robfig-cron/v3 v3.0.4/go.mod h1:zEvo6MJXgi2X9aqZLZ/nFJTzSTeUwsPHXHOWrWOJEY8=
-github.com/18211167516/sessions v1.2.2 h1:J855CkKmjWGVm5MDmAegvw9P03mwSEyEc7FwBhJs9m0=
-github.com/18211167516/sessions v1.2.2/go.mod h1:2MlVi4cAy1w3Y5ntCtwOhw92VZ63qnZ2vJ8zKxs2BEI=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible h1:1G1pk05UrOh0NlF1oeaaix1x8XzrfjIDK47TY0Zehcw=
@@ -180,6 +178,8 @@ github.com/gopherjs/gopherjs v0.0.0-20181017120253-0766667cb4d1 h1:EGx4pi6eqNxGa
 github.com/gopherjs/gopherjs v0.0.0-20181017120253-0766667cb4d1/go.mod h1:wJfORRmW1u3UXTncJ5qlYoELFm8eSnnEO6hX4iZ3EWY=
 github.com/gorilla/securecookie v1.1.1 h1:miw7JPhV+b/lAHSXz4qd/nN9jRiAFV5FwjeKyCS8BvQ=
 github.com/gorilla/securecookie v1.1.1/go.mod h1:ra0sb63/xPlUeL+yeDciTfxMRAA+MP+HVt/4epWDjd4=
+github.com/gorilla/sessions v1.2.1 h1:DHd3rPN5lE3Ts3D8rKkQ8x/0kqfeNmBAaiSi+o7FsgI=
+github.com/gorilla/sessions v1.2.1/go.mod h1:dk2InVEVJ0sfLlnXv9EAgkf6ecYs/i80K/zI+bUmuGM=
 github.com/gorilla/websocket v1.4.2/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
 github.com/grpc-ecosystem/go-grpc-middleware v1.0.0/go.mod h1:FiyG127CGDf3tlThmgyCl78X/SZQqEOJBCDaAfeWzPs=
 github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0/go.mod h1:8NvIoxWQoOIhqOTXgfV/d3M/q6VIi02HzZEHgUlZvzk=

@@ -14,8 +14,8 @@ import (
 
 	"github.com/blogxp/ginapi/global"
 
-	"github.com/18211167516/sessions"
 	"github.com/go-redis/redis/v8"
+	"github.com/gorilla/sessions"
 	"go.uber.org/zap"
 )
 
@@ -38,7 +38,9 @@ type KeyGenFunc func() (string, error)
 
 func GetRedisStore() Store {
 	client := redis.NewClient(&redis.Options{
-		Addr: "127.0.0.1:6379",
+		Addr:     global.VP.GetString("redis.addr"),
+		Username: global.VP.GetString("redis.user"),
+		Password: global.VP.GetString("redis.pwd"),
 	})
 
 	// New default RedisStore

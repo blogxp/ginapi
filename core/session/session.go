@@ -7,8 +7,8 @@ import (
 	"github.com/blogxp/ginapi/core/session/stores"
 	"github.com/blogxp/ginapi/global"
 
-	"github.com/18211167516/sessions"
 	"github.com/gin-gonic/gin"
+	"github.com/gorilla/sessions"
 )
 
 var DefaultKey = "SESSION"

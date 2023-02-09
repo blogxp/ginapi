@@ -27,9 +27,9 @@ func initGin() *gin.Engine {
 
 // 加载路由
 func loadRoute(r *gin.Engine) {
+	fileRoute(r)
 	testRoute(r)
 	apiRoute(r)
 	swagRoute(r)
-	fileRoute(r)
 	adminRoute(r)
 }
