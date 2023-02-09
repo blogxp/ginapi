@@ -1,0 +1,53 @@
+package routes
+
+import (
+	"time"
+
+	"github.com/blogxp/ginapi/app/controller"
+	"github.com/blogxp/ginapi/app/middleware"
+	"github.com/blogxp/ginapi/app/models"
+	"github.com/blogxp/ginapi/app/services"
+	"github.com/blogxp/ginapi/global"
+	"github.com/blogxp/ginapi/tool"
+
+	"github.com/gin-gonic/gin"
+	jwt "github.com/golang-jwt/jwt"
+)
+
+func apiRoute(r *gin.Engine) {
+	r.GET("/authToken", middleware.DefaultLog(), middleware.Recovery(), func(c *gin.Context) {
+		p, _ := time.ParseDuration(global.CF.App.JwtExpiresAt)
+		expireTime := time.Now().Add(p).Unix()
+
+		ret := services.GetUserByID("1")
+
+		if !ret.GetStatus() {
+			tool.JSONP(c, 40001, ret.GetMsg(), ret["data"])
+			return
+		}
+
+		waitUse := ret["data"].(models.SysUser)
+
+		claims := tool.Claims{
+			ID:       "1",
+			Name:     waitUse.Name,
+			Type:     waitUse.Type,
+			RuleName: "超级管理员",
+			StandardClaims: jwt.StandardClaims{
+				ExpiresAt: expireTime, //过期时间
+				Issuer:    "go-api",   //签发人
+			},
+		}
+		token, err := tool.GenerateToken(claims)
+		if err != nil {
+			tool.JSONP(c, tool.ERROR_AUTH_TOKEN, "", nil)
+			return
+		}
+		tool.JSONP(c, 0, "成功", token)
+	})
+
+	api := r.Group("api", middleware.DefaultLog(), middleware.Recovery())
+	{
+		api.GET("/captcha", controller.Captcha)
+	}
+}

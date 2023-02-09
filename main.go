@@ -1,0 +1,31 @@
+package main
+
+import (
+	"github.com/blogxp/ginapi/core"
+	"github.com/blogxp/ginapi/global"
+	"github.com/blogxp/ginapi/initialize"
+)
+
+// @title go-api 框架
+// @version 1.0
+// @description gin-web框架
+// @termsofservice https://github.com/18211167516/Go-Gin-Api
+// @contact.name baichonghua
+// @contact.email 18211167516@163.com
+// @host 127.0.0.1:8080
+
+func main() {
+
+	initEmbed()                                   //初始化Embed
+	global.VP = core.Viper()                      //初始化配置
+	global.LOG = initialize.Zap("gga")            //初始化日志
+	global.CRONLOG = initialize.ZapSugar("cron")  //初始化cron日志
+	global.CRON = initialize.Cron(global.CRONLOG) //初始化cron
+	global.DB = initialize.Gorm()                 //初始化DB
+	//主进程结束前关闭数据库链接
+	sqlDB, _ := global.DB.DB()
+	defer sqlDB.Close()
+	//core.CmdRun()
+	//启动服务器
+	core.RunServer()
+}

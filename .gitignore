@@ -1,0 +1,10 @@
+config/app.toml
+*.exe
+.vscode
+.api
+go-api_unix
+gga
+pid.lock
+log
+tmp/*
+.vscode/launch.json
