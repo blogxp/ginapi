@@ -15,7 +15,7 @@ var initdbCmd = &cmd.Command{
 	Short: "初始化表",
 	Long:  `初始化核心表以及数据`,
 	Run: func(Command *cmd.Command, args []string) {
-		global.VP = core.Viper("../static/config/app.toml") //初始化配置
+		global.VP = core.Viper("../config/app.toml") //初始化配置
 		global.VP.Set("mysql.global.LogMode", "Warn")
 		global.LOG = initialize.Zap("gga") //初始化日志
 		global.DB = initialize.Gorm()      //初始化DB

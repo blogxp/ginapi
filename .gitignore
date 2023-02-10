@@ -6,3 +6,4 @@ gga
 pid.lock
 log
 tmp/*
+pjdoc/*
